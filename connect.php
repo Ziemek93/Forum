@@ -1,20 +1,9 @@
 <?php
+return $config = array(
+    'nazwaBazy' => 'forum',
+    'host' => 'localhost',
+    'uzytkownik' => 'root',
+    'haslo' => ''
+);
 
-
-		/*	
-		$nazwa_bazy = 'forum';
-		$host = 'localhost';
-		$uzytkownik = 'root';
-		$haslo = '';
-		*/
-		return $config = array(
-		'nazwaBazy' => 'forum',
-		'host' => 'localhost',
-		'uzytkownik' => 'root',
-		'haslo' => ''
-		);
-		
- 
-		
-		
 ?>
