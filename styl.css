@@ -1,15 +1,443 @@
-body
+* {padding:0;margin:0;}
+
+
+html 
 {
+	width:100%;  height:100%;
+	background:  #6897bb;
+}
+
+body 
+{
+	 
+	font-family: 'Slabo 27px', serif ;
+	font-size:18px;line-height:1.5;
+	font-weight:400;
+	color:#434343;
+	 
+	height:100%;
+}
+
+ 
+
+#container 
+{
+	width:100%;
+	 
+	margin:0 auto;
+	height:100%;
+}
+
+ 
+
+header 
+{
+	 background: #003d5e;
+ height:  10%; 
+
+}
+
+header img 
+{
+	  
+	max-width: 100%;
+	max-height: 100%; 
+}
+header h1 
+{
+	color: white;
+	 float:left;
+	font-size:50px;
+	 text-align: center;
+	 letter-spacing: 2px;
+
+}
+ 
+section ul
+{
+	padding: 5px;
+	list-style:none;
+}
+section ul li
+{
+	margin: auto;
+	width: 50%;
+	border: 1px solid grey;
+	 border-radius: 4px;
+} 
+section ul li a
+{
+	text-align: center;
+	display:block;
+	text-decoration:none;
+	color:black;
+	background:  #6897bb;
+	letter-spacing: 1px;
+	 
+}
+
+section ul li a:hover
+{
+
+	color:white;
+	background: black;
+	 
+}
+
+aside 
+{
+	
+	 
+	 border-radius: 10px;
+	float:left;
+	margin:0 0 25px;
+	background: #2F5272;
+	  
+ 
+
+}
+
+ 
+aside nav ul 
+{
+	list-style:none;
+	 
+}
+
+aside nav ul li 
+{
+ margin: 10px 0;
+	margin-bottom:1px;
+
+}
+
+aside nav ul li a 
+{
+		text-align: center ;
+	display:block;
+	text-decoration:none;
+	color:#000;
+	 border: medium solid #6897bb;
+	 
+}
+
+aside nav ul li a:hover
+{
+	background:#212121;
+	color:#FFF;
+}
+
+ 
+
+#main 
+{	
+	border-radius: 10px ;
+	background: white;
+	float:left;
+	margin:25px 25px 25px ;
+	padding: 6px;
+	 height: auto;
+}
+
+ 
+
+footer 
+{
+	 text-align: center;
+ 	color:#FFF;
+	background:#121212;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width:100%;
+}
+
+ 
+
+@media (min-width: 800px) 
+{
+
+	aside 
+	{
+		height: 100%;
+		width:15%;
+	}
+
+
+	 
+	section
+	{
+		height: auto;
+		width:auto;
+
+	}
+
+	#main 
+	{
+		width:65%;
+	}
+
+	  
+
+	 
+}
+
+@media (max-width: 800px) 
+{
+	header
+	{
+		 min-height: 5%;
+	}
+	aside
+ 	{
+
+       height: 20%;
+ 	}
+
+
+	section
+	{
+		 height: auto;
+	}
+
+	footer
+	{
+		 height: 5%;
+		 max-width:100%;
+	}
+	
+ 
+ 	
+	aside,
+
+	#main 
+	{
+		min-width:100%;
+		padding: 0px 0px 0px;
+		margin: 0px;
+		 height: auto;
+	}
+ 
+}
+
+.button {
+	font-size: 20px;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+	   padding: 4px;
+     border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+     float: right;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
     background-color: white;
-  
-   
-}
-
-
-a {
     color: black;
+    border: 2px solid #555555;
+	  
+} 
+.button1:hover {
+    background-color: #555555;
+    color: white;
+	
 }
 
-.admDel {
-	background-color: grey;
+.button2 {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
 }
+
+.button2:hover {
+    background-color: #555555;
+    color: white;
+}
+
+
+
+
+.modal-open {
+  overflow: hidden;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+}
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 0.5rem;
+  pointer-events: none;
+}
+
+.modal.fade .modal-dialog {
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  -webkit-transform: translate(0, -25%);
+  transform: translate(0, -25%);
+}
+
+.modal.show .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.modal-dialog-centered {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: calc(100% - (0.5rem * 2));
+}
+
+.modal-content {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
+}
+
+.modal-backdrop.fade {
+  opacity: 0;
+}
+
+.modal-backdrop.show {
+  opacity: 0.5;
+}
+
+.modal-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+
+.modal-header .close {
+  padding: 1rem;
+  margin: -1rem -1rem -1rem auto;
+}
+
+.modal-title {
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.modal-body {
+  position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1rem;
+}
+
+.modal-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.modal-footer > :not(:first-child) {
+  margin-left: .25rem;
+}
+
+.modal-footer > :not(:last-child) {
+  margin-right: .25rem;
+}
+
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 500px;
+    margin: 1.75rem auto;
+  }
+  .modal-dialog-centered {
+    min-height: calc(100% - (1.75rem * 2));
+  }
+  .modal-sm {
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 992px) {
+  .modal-lg {
+    max-width: 800px;
+  }
+}
+
+button.close {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+
+

@@ -28,7 +28,7 @@ try
 				$ilosc_kat = $query->rowCount(); //
 				if ($ilosc_kat != 0)
 				{
-								echo "   |result == True and ilosc_kat != 0|    ";
+								//echo "   |result == True and ilosc_kat != 0|    ";
 
 								foreach ($query as $posts)
 								{
