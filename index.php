@@ -3,7 +3,7 @@
    require_once ('indexPosts.php');
    session_start();
    
-   if (isset($_SESSION['Id']) || isset($_SESSION['login']) || isset($_SESSION['password']))
+   if (isset($_SESSION['Id']) || isset($_SESSION['login']) || isset($_SESSION['password']) || isset($_SESSION['password']))
    	{
    	header('Location: indexZ.php');
    	exit();

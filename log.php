@@ -4,7 +4,7 @@ require_once ('connect.php');
 
 $login = htmlspecialchars($_POST['login'], ENT_QUOTES);
 $password = htmlspecialchars($_POST['password'], ENT_QUOTES);
-
+ 
 try
 {
 
@@ -27,6 +27,7 @@ try
             $_SESSION['Id'] = $query['Id'];
             $_SESSION['login'] = $login;
             $_SESSION['password'] = $password;
+			 $_SESSION['expired'] = time() + 600;
             echo '  gut passwd  ';
 
             header('Location: indexZ.php');

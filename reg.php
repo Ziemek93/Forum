@@ -18,10 +18,10 @@ try
     $connect = new PDO($dsn, $config['uzytkownik'], $config['haslo'], [PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
     $query = $connect->prepare("INSERT INTO Uzytkownicy (Id, imie, login, haslo, plec) VALUES (NULL, :name, :login, :password, :sex)");
-    $query->bindValue(':name', $idp, PDO::PARAM_STRS);
-    $query->bindValue(':login', $idp, PDO::PARAM_STR);
-    $query->bindValue(':password', $idp, PDO::PARAM_STR);
-    $query->bindValue(':sex', $idp, PDO::PARAM_STR);
+    $query->bindValue(':name', $name, PDO::PARAM_STR);
+    $query->bindValue(':login', $login, PDO::PARAM_STR);
+    $query->bindValue(':password', $password, PDO::PARAM_STR);
+    $query->bindValue(':sex', $sex, PDO::PARAM_STR);
     //$result = @$lacz->query($zapytanie);
     $query->execute();
 

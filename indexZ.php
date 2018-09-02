@@ -1,15 +1,21 @@
 <?php
    require_once ('connect.php');
    require_once ('indexPosts.php');
+   
    session_start();
    
-   if (!isset($_SESSION['Id']) || !isset($_SESSION['login']) || !isset($_SESSION['password']))
+   $_SESSION['expired'] = $_SESSION['expired'] ?? 0;
+   
+   if (!isset($_SESSION['Id']) || !isset($_SESSION['login']) || !isset($_SESSION['password']) || $_SESSION['expired'] < time())
 	   {
-					header('Location: index.php');
+					header('Location: logout.php');
 					exit();
 	   }
-   echo $_SESSION['login'];
-   
+	   
+   echo $_SESSION['login']."     ";
+   print_r($_SESSION['expired'] - time());
+   $_SESSION['expired'] = time() + 600;
+  
    
    ?>
 <!DOCTYPE html>

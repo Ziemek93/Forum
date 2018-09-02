@@ -14,12 +14,13 @@ function resultArray($result) // changing object to array
     return $tablica_wyn;
 }
 
-try
-{
+
     $dsn = 'mysql:host=' . $config['host'] . ';dbname=' . $config['nazwaBazy'] . ';charset=utf8';
 
     // $dsn = "mysql:host=$host;dbname=$nazwa_bazy";
-    $connect = new PDO($dsn, $config['uzytkownik'], $config['haslo'], [PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+ try
+{
+	$connect = new PDO($dsn, $config['uzytkownik'], $config['haslo'], [PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
     $query = $connect->prepare("select Tytul, fname from Posty");
 
     $query->execute();
